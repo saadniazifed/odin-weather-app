@@ -6,7 +6,7 @@ async function getWeatherData() {
 
     //Fetch the weather of London from the API. Use await.
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${getLocation}&units=metric&APPID=c37741fb2b2886b1cd8210bf805f8c57`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${getLocation}&units=metric&APPID=c37741fb2b2886b1cd8210bf805f8c57`,
       { mode: "cors" }
     );
 
