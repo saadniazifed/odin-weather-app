@@ -32,4 +32,4 @@ const dataObject = (data) => {
   console.log(dataObj);
 };
 
-export { getWeatherData };
+export { getWeatherData, dataObject };
