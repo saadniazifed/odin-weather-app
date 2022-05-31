@@ -32,7 +32,7 @@ body {
   gap: 2rem;
 }
 
-input[type="text"] {
+input {
   width: 25rem;
   height: 100%;
   border: none;
