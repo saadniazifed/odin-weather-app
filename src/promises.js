@@ -1,16 +1,35 @@
-async function getWeatherData(resolve, reject) {
-  //Use the try and catch method.
+async function getWeatherData() {
+  //Use the try and catch method inside the async function.
+
   try {
-    const getWeather = await fetch(
-      "http://api.openweathermap.org/data/2.5/weather?q=London&APPID=c37741fb2b2886b1cd8210bf805f8c57",
+    const getLocation = document.querySelector("#location").value;
+
+    //Fetch the weather of London from the API. Use await.
+    const response = await fetch(
+      `http://api.openweathermap.org/data/2.5/weather?q=${getLocation}&units=metric&APPID=c37741fb2b2886b1cd8210bf805f8c57`,
       { mode: "cors" }
     );
-    const response = await getWeather.json();
-    return response;
-  } catch {}
-  //In the try method, Get the weather from the API using await.
-  //Pass the json data using JSON method in a variable.
-  //While, in the catch method, catch the error if a place doesn't exist.
+
+    //Pass the json data using JSON method in a variable.
+    const data = await response.json();
+    dataObject(data);
+
+    //If there's an error, console log it.
+  } catch (err) {
+    console.log(err);
+  }
 }
 
-//Apply the then() method to the getWeatherData function.
+const dataObject = (data) => {
+  const dataObj = {
+    name: data.name,
+    country: data.sys.country,
+    description: data.weather[0].description,
+    temp: data.main.temp,
+    feelsLike: data.main.feels_like,
+    humidity: data.main.humidity,
+  };
+  console.log(dataObj);
+};
+
+export { getWeatherData };
