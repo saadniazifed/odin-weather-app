@@ -14,15 +14,26 @@ body {
   height: 100vh;
 }
 
-form {
-  float: right;
-  height: 80%;
-  position: relative;
-  margin: 2.5rem 3.5rem 0 0;
+.main-heading {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  height: 70px;
+}
+
+.rightSideDiv {
+  display: flex;
+  gap: 2rem;
 }
 
 input[type="text"] {
-  width: 15rem;
+  width: 25rem;
   height: 100%;
   border: none;
   outline: none;
@@ -31,6 +42,23 @@ input[type="text"] {
   color: #ffffff;
   font-size: 1.4rem;
   border-radius: 0.5rem;
+}
+
+.getLocationBtn {
+  width: 25%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.getLocationBtn:hover {
+  color: black;
+  background-color: white;
 }
 
 .main-weather-display {
@@ -43,7 +71,7 @@ input[type="text"] {
 }
 
 .condition {
-  font-size: 2.2rem;
+  font-size: 1.7rem;
   letter-spacing: 0.1rem;
   padding-left: 0.3rem;
 }
@@ -57,19 +85,11 @@ input[type="text"] {
 }
 
 .degrees {
-  font-size: 15rem;
+  font-size: 6rem;
   font-weight: 900;
   font-family: "Nunito", sans-serif;
   position: relative;
 }
-
-/* .degrees::after {
-  content: "\00B0 F";
-  font-size: 3rem;
-  position: absolute;
-  top: 1.8rem;
-  left: 17.3rem;
-} */
 
 .weather-details-info {
   display: flex;
@@ -79,9 +99,9 @@ input[type="text"] {
   letter-spacing: 0.1rem;
   position: absolute;
   border-left: 0.2rem solid rgba(255, 255, 255, 0.5);
-  top: 45%;
-  left: 22.5rem;
-  height: 10rem;
+  top: 5%;
+  left: 30.5rem;
+  height: 14rem;
   padding-left: 3.5rem;
   justify-content: space-between;
 }
@@ -98,6 +118,18 @@ input[type="text"] {
   font-size: 1rem;
 }
 
-/* .humidity::after {
-  content: "%";
-} */
+.feelsLike,
+.tempMax,
+.humidity {
+  font-family: "Apple SD Gothic Neo";
+}
+
+.location,
+.condition {
+  font-family: "Operator Mono Lig";
+}
+
+h1 {
+  color: white;
+  font-family: "Operator Mono Lig";
+}

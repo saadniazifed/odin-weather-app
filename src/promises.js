@@ -12,7 +12,9 @@ async function getWeatherData() {
 
     //Pass the json data using JSON method in a variable.
     const data = await response.json();
-    dataObject(data);
+    console.log(data);
+    getWeatherValues(data);
+    return data;
 
     //If there's an error, console log it.
   } catch (err) {
@@ -20,16 +22,17 @@ async function getWeatherData() {
   }
 }
 
-const dataObject = (data) => {
-  const dataObj = {
+const getWeatherValues = (data) => {
+  const weatherValues = {
     name: data.name,
     country: data.sys.country,
     description: data.weather[0].description,
     temp: data.main.temp,
     feelsLike: data.main.feels_like,
     humidity: data.main.humidity,
+    maxTemp: data.main.temp_max,
   };
-  console.log(dataObj);
+  return weatherValues;
 };
 
-export { getWeatherData, dataObject };
+export { getWeatherData, getWeatherValues };
