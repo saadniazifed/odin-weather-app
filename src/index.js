@@ -1,3 +1,5 @@
+import "./style.css";
+
 const getLocationBtn = document.querySelector(".getLocationBtn");
 
 async function getWeatherData() {
